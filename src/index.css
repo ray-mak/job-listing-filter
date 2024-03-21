@@ -1,0 +1,242 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+}
+
+:root {
+  --desaturated-dark-cyan: hsl(180, 29%, 50%);
+  --background: hsl(180, 52%, 96%);
+  --filter-tablets: hsl(180, 31%, 95%);
+  --dark-grayish-cyan:hsl(180, 8%, 52%);
+  --very-dark-cyan: hsl(180, 14%, 20%);
+  --white: #fff;
+}
+
+
+header {
+  width: 100%;
+  height: 160px;
+  background-color: var(--desaturated-dark-cyan);
+  background-image: url(images/bg-header-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  min-height: calc(100vh - 160px);
+  background-color: var(--background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter--bar {
+  position: absolute;
+  margin-top: -20px;
+  width: 80%;
+  box-shadow: 4px 4px 10px hsl(180, 32%, 87%);
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 4px;
+}
+
+.filter--tablet {
+  display: flex;
+  margin-right: 16px;
+}
+
+.tag {
+  font-weight: 700;
+  color: var(--desaturated-dark-cyan);
+  background-color: var(--filter-tablets);
+  padding: 8px 12px 4px 12px;
+  border-radius: 4px 0 0 4px;
+}
+
+.remove-btn {
+  width: 30px;
+  border: none;
+  background-color: var(--desaturated-dark-cyan);
+  background-image: url(https://github.com/ray-mak/job-listing-filter/assets/154634286/3876f3f2-6b03-451b-8733-0b88231c1625);
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 0 4px 4px 0;
+}
+
+.clear-btn {
+  margin-left: auto;
+  border: none;
+  background: none;
+  text-decoration: underline;
+  font-weight: 700;
+  color: var(--desaturated-dark-cyan);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.remove-btn:hover {
+  background-color: var(--very-dark-cyan);
+  cursor: pointer;
+}
+
+.card--container {
+  width: 80%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.card {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 36px;
+  background-color: var(--white);
+  border-radius: 6px;
+  box-shadow: 4px 4px 10px hsl(180, 32%, 87%);
+  margin-top: 24px;
+}
+
+.info--container {
+  margin-left: 16px;
+}
+
+.headline--container {
+  display: flex;
+  align-items: center;
+}
+
+.company {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--desaturated-dark-cyan);
+  margin-right: 12px;
+}
+
+.new--label {
+  color: var(--white);
+  background-color: var(--desaturated-dark-cyan);
+  padding: 8px 12px 4px 12px;
+  font-weight: 500;
+  border-radius: 18px;
+  font-size: .9rem;
+  margin: 0 12px 0 12px;
+}
+
+.featured--label {
+  color: var(--white);
+  background-color: var(--very-dark-cyan);
+  padding: 8px 12px 4px 12px;
+  font-weight: 500;
+  border-radius: 18px;
+  font-size: .9rem;
+}
+
+.position--title {
+  margin: 12px 0 12px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--very-dark-cyan);
+}
+
+.position--title:hover {
+  color: var(--desaturated-dark-cyan);
+  cursor: pointer;
+}
+
+.details {
+  color: var(--dark-grayish-cyan);
+  font-weight: 500;
+}
+
+.languages--container {
+  margin-left: auto;
+  display: flex;
+}
+
+.language {
+  margin: 0 8px 0 8px;
+  font-weight: 700;
+  color: var(--desaturated-dark-cyan);
+  background-color: var(--filter-tablets);
+  padding: 8px 12px 4px 12px;
+  border-radius: 4px;
+}
+
+.language:hover {
+  color: var(--white);
+  background-color: var(--desaturated-dark-cyan);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1180px) {
+  .card--container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 1020px) {
+  .card--container {
+    width: 98%;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .card--container {
+    width: 90%;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    margin-bottom: 48px;
+  }
+
+  .logo {
+    position: relative;
+    top: -50px;
+  }
+
+  .info--container {
+    margin: -40px 0 16px 0;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--dark-grayish-cyan);
+  }
+
+  .languages--container {
+    margin-left: 0;
+    flex-wrap: wrap;
+    margin-top: 16px;
+    gap: 12px;
+  }
+
+  .language {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .position--title {
+    font-size: 1.2rem;
+  }
+
+  .company {
+    font-size: 1rem;
+  }
+
+  .featured--label, .new--label {
+    font-size: .75rem;
+  }
+
+  .logo {
+    width: 60px;
+  }
+}
