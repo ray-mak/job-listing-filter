@@ -4,10 +4,10 @@ function Card(props) {
     const languages = props.info.languages;
     const tools = props.info.tools;
     const langCode = languages.map(item => (
-        <div className="language" key={item}>{item}</div>
+        <div className="language" onClick={props.handleClick} key={item}>{item}</div>
     ))
     const toolCode = tools.map(item => (
-        <div className="language" key={item}>{item}</div>
+        <div className="language" onClick={props.handleClick} key={item}>{item}</div>
     ))
     const newText = props.info.new;
     const featured = props.info.featured;
@@ -26,8 +26,8 @@ function Card(props) {
             </div>
             <div className="divider"></div>
             <div className="languages--container">
-              <div className="language">{props.info.role}</div>
-              <div className="language">{props.info.level}</div>
+              <div className="language" onClick={props.handleClick}>{props.info.role}</div>
+              <div className="language" onClick={props.handleClick}>{props.info.level}</div>
               {langCode}  
               {toolCode}
             </div>
